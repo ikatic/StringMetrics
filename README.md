@@ -62,8 +62,8 @@ To use this library, include it in your project and instantiate the desired stri
 
 ```
 ikatic.StringMetrics.IAlgorithm sim = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Hamming) as ikatic.StringMetrics.IAlgorithm;
-        System.Console.WriteLine(sim.Compare("House", "Hause"));
-        System.Console.WriteLine(sim.Compare("The cat napped on the sunny mat", "The dog slept on the cozy bed"));
+System.Console.WriteLine(sim.Compare("House", "Hause"));
+System.Console.WriteLine(sim.Compare("The cat napped on the sunny mat", "The dog slept on the cozy bed"));
 ```
 
 ***Output***
