@@ -2,6 +2,29 @@
 
 Welcome to the StringMetrics project! This project is a custom implementation of seven different string metric algorithms designed to evaluate the similarity and distance between two strings. My goal is to provide an easy-to-use and extensible framework for string comparison using well-known metrics.
 
+## Features ##
+
+### Custom Implementation: ### 
+Each string metric algorithm is a custom implementation conforming to the *IAlgorithm* interface.
+
+**Algorithms Included:**
+-	***Hamming:*** Assigns a score based on the number of positions at which the corresponding symbols are different.
+-	***Dice:*** Measures the similarity between two sets.
+-	***Jaro:*** Evaluates the similarity and assigns a score based on the matching characters and transpositions.
+-	***Jaro-Winkler:*** An extension of Jaro that gives more favorable ratings to strings that match from the beginning.
+-	***Soundex:*** Encodes strings into a sound representation based on how they are pronounced in English.
+-	***Levenshtein:*** Represents the number of single-character edits required to change one word into the other.
+-	***Damerau-Levenshtein:*** Extends Levenshtein by including transpositions among its allowable operations.
+  
+**IAlgorithm Interface:**
+Each algorithm implements the IAlgorithm interface, providing a standardized way to access and use the metrics:
+-	***double Compare(string left, string right)***: Compares two strings and returns the similarity score.
+-	***string Left { get; }***: Gets the left comparison string.
+-	***string Right { get; }***: Gets the right comparison string.
+-	***double Score { get; }***: Gets the similarity score between Left and Right.
+-	***double Distance { get; }***: Gets the metric specific distance score between Left and Right.
+-	***IDiagnostics Diagnostics { get; }***: Provides diagnostic information about the comparison, e.g. total milliseconds elapsed to compare two strings.
+
 ## String Metrics and Their Uses and Applications ##
 String metrics are mathematical algorithms designed to measure the similarity or distance between two text strings. They play a crucial role in various applications, from data cleansing to natural language processing. By comparing strings for similarity, these metrics help identify and resolve inconsistencies in data, detect duplicates, and improve data quality and integrity.
 
@@ -31,30 +54,7 @@ String metrics can be used to compare textual data in financial or security cont
  - ***Genetic Sequencing:*** In bioinformatics, string metrics compare DNA sequences to identify genetic similarities and differences.
 
  - ***Customer Feedback Analysis:*** Businesses can use string metrics to analyze customer feedback, identifying common themes or issues even when expressed differently by various customers.
-
-## Features ##
-
-### Custom Implementation: ### 
-Each string metric algorithm is a custom implementation conforming to the *IAlgorithm* interface.
-
-**Algorithms Included:**
--	***Hamming:*** Assigns a score based on the number of positions at which the corresponding symbols are different.
--	***Dice:*** Measures the similarity between two sets.
--	***Jaro:*** Evaluates the similarity and assigns a score based on the matching characters and transpositions.
--	***Jaro-Winkler:*** An extension of Jaro that gives more favorable ratings to strings that match from the beginning.
--	***Soundex:*** Encodes strings into a sound representation based on how they are pronounced in English.
--	***Levenshtein:*** Represents the number of single-character edits required to change one word into the other.
--	***Damerau-Levenshtein:*** Extends Levenshtein by including transpositions among its allowable operations.
-  
-**IAlgorithm Interface:**
-Each algorithm implements the IAlgorithm interface, providing a standardized way to access and use the metrics:
--	***double Compare(string left, string right)***: Compares two strings and returns the similarity score.
--	***string Left { get; }***: Gets the left comparison string.
--	***string Right { get; }***: Gets the right comparison string.
--	***double Score { get; }***: Gets the similarity score between Left and Right.
--	***double Distance { get; }***: Gets the metric specific distance score between Left and Right.
--	***IDiagnostics Diagnostics { get; }***: Provides diagnostic information about the comparison, e.g. total milliseconds elapsed to compare two strings.
-
+   
 ### Usage ###
 To use this library, include it in your project and instantiate the desired string metric class using *Factory* static class provided in this project. Call the Compare method with two strings to evaluate their similarity:
 
