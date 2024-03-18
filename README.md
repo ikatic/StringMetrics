@@ -25,6 +25,20 @@ Each algorithm implements the IAlgorithm interface, providing a standardized way
 -	***double Distance { get; }***: Gets the metric specific distance score between Left and Right.
 -	***IDiagnostics Diagnostics { get; }***: Provides diagnostic information about the comparison, e.g. total milliseconds elapsed to compare two strings.
 
+### Usage ###
+To use this library, include it in your project and instantiate the desired string metric class using *Factory* static class provided in this project. Call the Compare method with two strings to evaluate their similarity:
+
+***C# / CSharp***
+```
+ikatic.StringMetrics.IAlgorithm sim = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Hamming) as ikatic.StringMetrics.IAlgorithm;
+System.Console.WriteLine(sim.Compare("House", "Hause"));
+System.Console.WriteLine(sim.Compare("The cat napped on the sunny mat", "The dog slept on the cozy bed"));
+```
+***Output***
+
+`0.8` <br>
+`0.1935483870967742`
+
 ## String Metrics and Their Uses and Applications ##
 String metrics are mathematical algorithms designed to measure the similarity or distance between two text strings. They play a crucial role in various applications, from data cleansing to natural language processing. By comparing strings for similarity, these metrics help identify and resolve inconsistencies in data, detect duplicates, and improve data quality and integrity.
 
@@ -54,22 +68,6 @@ String metrics can be used to compare textual data in financial or security cont
  - ***Genetic Sequencing:*** In bioinformatics, string metrics compare DNA sequences to identify genetic similarities and differences.
 
  - ***Customer Feedback Analysis:*** Businesses can use string metrics to analyze customer feedback, identifying common themes or issues even when expressed differently by various customers.
-   
-### Usage ###
-To use this library, include it in your project and instantiate the desired string metric class using *Factory* static class provided in this project. Call the Compare method with two strings to evaluate their similarity:
-
-***C# / CSharp***
-
-```
-ikatic.StringMetrics.IAlgorithm sim = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Hamming) as ikatic.StringMetrics.IAlgorithm;
-System.Console.WriteLine(sim.Compare("House", "Hause"));
-System.Console.WriteLine(sim.Compare("The cat napped on the sunny mat", "The dog slept on the cozy bed"));
-```
-
-***Output***
-
-`0.8` <br>
-`0.1935483870967742`
 
 ## Contribution ##
 I welcome contributions to the StringMetrics project! Whether it's improving the algorithms, fixing bugs, or extending the documentation, your help is appreciated.
