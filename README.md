@@ -48,12 +48,12 @@ Each string metric algorithm is a custom implementation conforming to the *IAlgo
   
 **IAlgorithm Interface:**
 Each algorithm implements the IAlgorithm interface, providing a standardized way to access and use the metrics:
--	double Compare(string left, string right): Compares two strings and returns the similarity score.
--	string Left { get; }: Gets the left comparison string.
--	string Right { get; }: Gets the right comparison string.
--	double Score { get; }: Gets the similarity score between Left and Right.
--	double Distance { get; }: Gets the metric specific distance score between Left and Right.
--	IDiagnostics Diagnostics { get; }: Provides diagnostic information about the comparison, e.g. total milliseconds elapsed to compare two strings.
+-	***double Compare(string left, string right): Compares two strings and returns the similarity score.
+-	***string Left { get; }***: Gets the left comparison string.
+-	***string Right { get; }***: Gets the right comparison string.
+-	***double Score { get; }***: Gets the similarity score between Left and Right.
+-	***double Distance { get; }***: Gets the metric specific distance score between Left and Right.
+-	***IDiagnostics Diagnostics { get; }***: Provides diagnostic information about the comparison, e.g. total milliseconds elapsed to compare two strings.
 -	 
 ### Usage ###
 To use this library, include it in your project and instantiate the desired string metric class using *Factory* static class provided in this project. Call the Compare method with two strings to evaluate their similarity:
