@@ -58,7 +58,7 @@ Each algorithm implements the IAlgorithm interface, providing a standardized way
 ### Usage ###
 To use this library, include it in your project and instantiate the desired string metric class using *Factory* static class provided in this project. Call the Compare method with two strings to evaluate their similarity:
 
-***Csharp***
+***C# / CSharp***
 
 ```
 ikatic.StringMetrics.IAlgorithm sim = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Hamming) as ikatic.StringMetrics.IAlgorithm;
@@ -72,7 +72,7 @@ System.Console.WriteLine(sim.Compare("The cat napped on the sunny mat", "The dog
 `0.1935483870967742`
 
 ## Contribution ##
-We welcome contributions to the StringMetrics project! Whether it's improving the algorithms, fixing bugs, or extending the documentation, your help is appreciated.
+I welcome contributions to the StringMetrics project! Whether it's improving the algorithms, fixing bugs, or extending the documentation, your help is appreciated.
 
 ## License ##
 This project is open-source and available under the MIT License.
