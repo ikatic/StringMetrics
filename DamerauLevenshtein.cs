@@ -6,7 +6,7 @@ using System;
 
 namespace ikatic.StringMetrics
 {
-    public class DamerauLevenshtein : Algorithm, IAlgorithm
+    public class DamerauLevenshtein : Metric, IMetric
     {
         public override double Compare(string pattern, string target)
         {

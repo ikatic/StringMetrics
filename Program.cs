@@ -29,37 +29,37 @@ class Program
         foreach (KeyValuePair<string, string> pair in pairs)
         {
             System.Console.WriteLine("\nCompare using Hamming string metric......");
-            ikatic.StringMetrics.IAlgorithm hamming = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Hamming) as ikatic.StringMetrics.IAlgorithm;
+            ikatic.StringMetrics.IMetric hamming = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Metrics.Hamming) as ikatic.StringMetrics.IMetric;
             Print(hamming, pair.Key, pair.Value);
 
             System.Console.WriteLine("\nCompare using Dice string metric......");
-            ikatic.StringMetrics.IAlgorithm dice = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Dice) as ikatic.StringMetrics.IAlgorithm;
+            ikatic.StringMetrics.IMetric dice = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Metrics.Dice) as ikatic.StringMetrics.IMetric;
             Print(dice, pair.Key, pair.Value);
 
             System.Console.WriteLine("\nCompare using Jaro string metric......");
-            ikatic.StringMetrics.IAlgorithm jaro = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Jaro) as ikatic.StringMetrics.IAlgorithm;
+            ikatic.StringMetrics.IMetric jaro = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Metrics.Jaro) as ikatic.StringMetrics.IMetric;
             Print(jaro, pair.Key, pair.Value);
 
             System.Console.WriteLine("\nCompare using Jaro-Winkler string metric......");
-            ikatic.StringMetrics.IAlgorithm jw = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.JaroWinkler) as ikatic.StringMetrics.IAlgorithm;
+            ikatic.StringMetrics.IMetric jw = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Metrics.JaroWinkler) as ikatic.StringMetrics.IMetric;
             Print(jw, pair.Key, pair.Value);
 
             System.Console.WriteLine("\nCompare using Soundex string metric......");
-            ikatic.StringMetrics.IAlgorithm sdx = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Soundex) as ikatic.StringMetrics.IAlgorithm;
+            ikatic.StringMetrics.IMetric sdx = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Metrics.Soundex) as ikatic.StringMetrics.IMetric;
             Print(sdx, pair.Key, pair.Value);
 
             System.Console.WriteLine("\nCompare using Levenshtein string metric......");
-            ikatic.StringMetrics.IAlgorithm lev = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.Levenshtein) as ikatic.StringMetrics.IAlgorithm;
+            ikatic.StringMetrics.IMetric lev = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Metrics.Levenshtein) as ikatic.StringMetrics.IMetric;
             Print(lev, pair.Key, pair.Value);
 
             System.Console.WriteLine("\nCompare using Damerau-Levenshtein string metric......");
-            ikatic.StringMetrics.IAlgorithm dlev = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Algorithms.DamerauLevenshtein) as ikatic.StringMetrics.IAlgorithm;
+            ikatic.StringMetrics.IMetric dlev = ikatic.StringMetrics.Factory.Create(ikatic.StringMetrics.Metrics.DamerauLevenshtein) as ikatic.StringMetrics.IMetric;
             Print(dlev, pair.Key, pair.Value);
         }
     }
 
-    
-    static void Print(IAlgorithm sim, string p, string t)
+
+    static void Print(IMetric sim, string p, string t)
     {
         //invokes compare method and prints results:
         sim.Compare(p, t);

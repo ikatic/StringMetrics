@@ -6,7 +6,7 @@ using System;
 
 namespace ikatic.StringMetrics
 {
-    public class Jaro : Algorithm, IAlgorithm
+    public class Jaro : Metric, IMetric
     {
         public override double Compare(string pattern, string target)
         {

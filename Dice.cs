@@ -6,7 +6,7 @@ using System;
 
 namespace ikatic.StringMetrics
 {
-    public class Dice : Algorithm, IAlgorithm
+    public class Dice : Metric, IMetric
     {
         public override double Compare(string pattern, string target)
         {

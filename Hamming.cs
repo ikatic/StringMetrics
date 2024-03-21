@@ -6,7 +6,7 @@ using System;
 
 namespace ikatic.StringMetrics
 {
-    public class Hamming : Algorithm, IAlgorithm
+    public class Hamming : Metric, IMetric
     {
 
         public override double Compare(string pattern, string target)

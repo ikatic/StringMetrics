@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ikatic.StringMetrics
 {
-    public class Soundex : Algorithm, IAlgorithm
+    public class Soundex : Metric, IMetric
     {
         /*
             Retain the first letter of the name

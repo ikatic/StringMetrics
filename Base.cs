@@ -8,7 +8,7 @@ namespace ikatic.StringMetrics
 {
 
 
-    public enum Algorithms
+    public enum Metrics
     {
         Unknown = 0,
         Hamming = 10,
@@ -21,7 +21,7 @@ namespace ikatic.StringMetrics
     }
 
 
-    public interface IAlgorithm
+    public interface IMetric
     {
         double Compare(string left, string right);
         string Left { get; }
@@ -40,7 +40,7 @@ namespace ikatic.StringMetrics
     }
 
 
-    public abstract class Algorithm : IAlgorithm
+    public abstract class Metric : IMetric
     {
         private System.Diagnostics.Stopwatch _sw = null;
         protected int lLength;
@@ -160,7 +160,7 @@ namespace ikatic.StringMetrics
         }
 
 
-        #region "IAlgorithm implementation:"
+        #region "IMetric implementation:"
 
         private string _left = null;
         public string Left

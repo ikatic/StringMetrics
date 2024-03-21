@@ -15,33 +15,33 @@ namespace ikatic.StringMetrics
         /// Returns a new instance of a string metric specifed, e.g. Jaro-Winkler;
         /// </summary>
         /// <returns></returns>
-        public static IAlgorithm Create(Algorithms algorithm)
+        public static IMetric Create(Metrics m)
         {
-            switch (algorithm)
+            switch (m)
             {
-                case Algorithms.DamerauLevenshtein:
-                    return new DamerauLevenshtein() as IAlgorithm;
+                case Metrics.DamerauLevenshtein:
+                    return new DamerauLevenshtein() as IMetric;
 
-                case Algorithms.Dice:
-                    return new Dice() as IAlgorithm;
+                case Metrics.Dice:
+                    return new Dice() as IMetric;
 
-                case Algorithms.Hamming:
-                    return new Hamming() as IAlgorithm;
+                case Metrics.Hamming:
+                    return new Hamming() as IMetric;
 
-                case Algorithms.Jaro:
-                    return new Jaro() as IAlgorithm;
+                case Metrics.Jaro:
+                    return new Jaro() as IMetric;
 
-                case Algorithms.JaroWinkler:
-                    return new JaroWinkler() as IAlgorithm;
+                case Metrics.JaroWinkler:
+                    return new JaroWinkler() as IMetric;
 
-                case Algorithms.Levenshtein:
-                    return new Levenshtein() as IAlgorithm;
+                case Metrics.Levenshtein:
+                    return new Levenshtein() as IMetric;
 
-                case Algorithms.Soundex:
-                    return new Soundex() as IAlgorithm;
+                case Metrics.Soundex:
+                    return new Soundex() as IMetric;
 
                 default:
-                    throw new Exception("0x00001 - Unrecognized string metric algorithm.");
+                    throw new Exception("0x00001 - Unrecognized string metric.");
 
             }
         }
